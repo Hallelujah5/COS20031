@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="COS20031">
+        <meta name="keywords" content="real estate, home, sale, listing">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <meta name="author" content="Nguyen Pha Le">
+        <link rel="stylesheet" href="css/listing.css">
+        <title>Estate Listing</title>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#"><img src="images/website-logo.png" class="web-logo mx-auto d-block" alt="logo of the website"></a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                      <a class="nav-link" href="#">Features</a>
+                      <a class="nav-link" href="#">Pricing</a>
+                      <a class="nav-link" href="#">Listings</a>             
+                    </div>
+
+                  </div>
+                  <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success blue" type="submit">Search</button>
+                  </form>
+
+
+                  <div class="dropdown">
+                    <a class="dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="images/user-logo.png" id="user-logo" alt="logo of a default user" class="img-fluid u-logo">
+                    </a>
+                    <ul class="dropdown-menu-end dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <li><button class="dropdown-item" type="button">Sign in</button></li>              
+                      <li><button class="dropdown-item" type="button">Help</button></li>
+                      <li><button class="dropdown-item" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sign out</button> </li>       
+                    </ul>
+                  </div>
+                  
+                  <!-- <div class="dropdown">
+                    <a href="#" id="userDropdown" class="dropdown-toggle " role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/user-logo.png" id="user-logo" alt="logo of a default user" class="img-fluid u-logo"></a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                     </ul>
+                  </div> -->
+                    
+                </div>
+                
+              </nav>
+            
+            <div class="listing-hero">
+                <div class="hero-content">
+                    <h1>Find Your Dream Home</h1>
+                    <p>Browse through our latest listings to find the perfect home for you.</p>
+                    <a href="#listings" class="btn-hero">View Listings</a>
+                </div>  
+            </div>
+        </header>
+        <main>
+            
+            <!-- Search Box -->
+            <section class="search-section">
+                <h2>Search Listings</h2>
+                <form id="search-form" method="post">
+                    <input type="search" id="location" name="location" placeholder="Location">
+                    <input type="search" id="property-name" name="property-name" placeholder="Property Name">
+                    <input type="number" id="min-price" name="min-price" placeholder="Min Price" min="0">
+                    <input type="number" id="max-price" name="max-price" placeholder="Max Price" min="0">
+                    <br>
+                    <select id="bedrooms" name="bedrooms">
+                        <option value="">Bedrooms</option>
+                        <option value="1">1 Bedroom</option>
+                        <option value="2">2 Bedrooms</option>
+                        <option value="3">3 Bedrooms</option>
+                        <option value="4">4 Bedrooms</option>
+                        <option value="5">5 Bedrooms</option>
+                        <option value="6">6 Bedrooms</option>
+                        <option value="7">7 Bedrooms</option>
+                        <option value="8">8 Bedrooms</option>
+                        <option value="9">9 Bedrooms</option>
+                        <option value="10">10 Bedrooms</option>
+                    </select>
+                    <select id="bathrooms" name="bathrooms">
+                        <option value="">Bathrooms</option>
+                        <option value="1">1 Bathroom</option>
+                        <option value="2">2 Bathrooms</option>
+                        <option value="3">3 Bathrooms</option>
+                        <option value="4">4 Bathrooms</option>
+                        <option value="5">5 Bathrooms</option>
+                        <option value="6">6 Bathrooms</option>
+                        <option value="7">7 Bathrooms</option>
+                        <option value="8">8 Bathrooms</option>
+                        <option value="9">9 Bathrooms</option>
+                        <option value="10">10 Bathrooms</option>
+                    </select>
+                    <select id="property-type" name="property-type">
+                        <option value="">Property Type</option>
+                        <option value="house">House</option>
+                        <option value="apartment">Apartment</option>
+                        <option value="townhome">Townhome</option>
+                    </select>
+                    <button type="submit">Search</button>
+                </form>
+            </section>
+            
+            
+            <!-- Sorting Options -->
+            <section class="sorting-section">
+                <h2>Sort Listings By</h2>
+                <form id="sorting-form">
+                    <select id="sort-by" name="sort-by">
+                        <option value="price">Price</option>
+                        <option value="date">Date Listed</option>
+                        <option value="popularity">Popularity</option>
+                    </select>
+                    <button type="submit">Sort</button>
+                </form>
+            </section>
+            
+            <section id="listings" class="listings-section">
+                <h2>Latest Listings</h2>
+                <div class="listing-grid">
+                    <div class="listing-card">
+                        <img src="images/house1.jpg" alt="House 1">
+                        <div class="listing-details">
+                            <h3><a href="#">Modern Family Home</a></h3>
+                            <p>Location: Los Angeles, CA</p>
+                            <hr>
+                            <div class="details-info">
+                                <span>2,500 sqft</span>
+                                <span>4 Bed</span>
+                                <span>3 Bath</span>
+                            </div>
+                            <hr>
+                            <p>Price Range: $450,000 - $500,000</p>
+                            <p>Reviews: ★★★★★</p>
+                        </div>
+                    </div>
+                    <div class="listing-card">
+                        <img src="images/house2.jpg" alt="House 2">
+                        <div class="listing-details">
+                            <h3><a href="#">Luxury Villa</a></h3>
+                            <p>Location: Miami, FL</p>
+                            <hr>
+                            <div class="details-info">
+                                <span>4,500 sqft</span>
+                                <span>5 Bed</span>
+                                <span>4 Bath</span>
+                            </div>
+                            <hr>
+                            <p>Price Range: $1,150,000 - $1,200,000</p>
+                            <p>Reviews: ★★★★★</p>
+                        </div>
+                    </div>
+                    <div class="listing-card">
+                        <img src="images/beach-house.jpg" alt="Beach House">
+                        <div class="listing-details">
+                            <h3><a href="#">Beach House</a></h3>
+                            <p>Location: Malibu, CA</p>
+                            <hr>
+                            <div class="details-info">
+                                <span>1,800 sqft</span>
+                                <span>3 Bed</span>
+                                <span>2 Bath</span>
+                            </div>
+                            <hr>
+                            <p>Price Range: $700,000 - $750,000</p>
+                            <p>Reviews: ★★★★★</p>
+                        </div>
+                    </div>
+                    <div class="listing-card">
+                        <img src="images/bungalow.jpg" alt="Bungalow">
+                        <div class="listing-details">
+                            <h3><a href="#">Cozy Bungalow</a></h3>
+                            <p>Location: Austin, TX</p>
+                            <hr>
+                            <div class="details-info">
+                                <span>1,200 sqft</span>
+                                <span>2 Bed</span>
+                                <span>1 Bath</span>
+                            </div>
+                            <hr>
+                            <p>Price Range: $280,000 - $300,000</p>
+                            <p>Reviews: ★★★★★</p>
+                        </div>
+                    </div>
+                    <div class="listing-card">
+                        <img src="images/penthouse.jpg" alt="Penthouse">
+                        <div class="listing-details">
+                            <h3><a href="#">City Penthouse</a></h3>
+                            <p>Location: New York, NY</p>
+                            <hr>
+                            <div class="details-info">
+                                <span>3,500 sqft</span>
+                                <span>4 Bed</span>
+                                <span>3 Bath</span>
+                            </div>
+                            <hr>
+                            <p>Price Range: $2,400,000 - $2,500,000</p>
+                            <p>Reviews: ★★★★★</p>
+                        </div>
+                    </div>
+                    <div class="listing-card">
+                        <img src="images/cabin.jpg" alt="Cabin">
+                        <div class="listing-details">
+                            <h3><a href="#">Mountain Cabin</a></h3>
+                            <p>Location: Denver, CO</p>
+                            <hr>
+                            <div class="details-info">
+                                <span>2,000 sqft</span>
+                                <span>3 Bed</span>
+                                <span>2 Bath</span>
+                            </div>
+                            <hr>
+                            <p>Price Range: $380,000 - $400,000</p>
+                            <p>Reviews: ★★★★★</p>
+                        </div>
+                    </div>
+                    <div class="listing-card">
+                        <img src="images/townhouse.jpg" alt="Townhouse">
+                        <div class="listing-details">
+                            <h3><a href="#">Urban Townhouse</a></h3>
+                            <p>Location: Seattle, WA</p>
+                            <hr>
+                            <div class="details-info">
+                                <span>2,300 sqft</span>
+                                <span>3 Bed</span>
+                                <span>2.5 Bath</span>
+                            </div>
+                            <hr>
+                            <p>Price Range: $580,000 - $600,000</p>
+                            <p>Reviews: ★★★★★</p>
+                        </div>
+                    </div>
+                    <div class="listing-card">
+                        <img src="images/ranch.jpg" alt="Ranch">
+                        <div class="listing-details">
+                            <h3><a href="#">Spacious Ranch</a></h3>
+                            <p>Location: Dallas, TX</p>
+                            <hr>
+                            <div class="details-info">
+                                <span>3,000 sqft</span>
+                                <span>4 Bed</span>
+                                <span>3 Bath</span>
+                            </div>
+                            <hr>
+                            <p>Price Range: $780,000 - $800,000</p>
+                            <p>Reviews: ★★★★★</p>
+                        </div>
+                    </div>
+                    <div class="listing-card">
+                        <img src="images/condo.jpg" alt="Condo">
+                        <div class="listing-details">
+                            <h3><a href="#">Downtown Condo</a></h3>
+                            <p>Location: Chicago, IL</p>
+                            <hr>
+                            <div class="details-info">
+                                <span>1,500 sqft</span>
+                                <span>2 Bed</span>
+                                <span>2 Bath</span>
+                            </div>
+                            <hr>
+                            <p>Price Range: $430,000 - $450,000</p>
+                            <p>Reviews: ★★★★★</p>
+                        </div>
+                    </div>
+                    <div class="listing-card">
+                        <img src="images/mansion.jpg" alt="Mansion">
+                        <div class="listing-details">
+                            <h3><a href="#">Luxury Mansion</a></h3>
+                            <p>Location: Beverly Hills, CA</p>
+                            <hr>
+                            <div class="details-info">
+                                <span>10,000 sqft</span>
+                                <span>7 Bed</span>
+                                <span>6 Bath</span>
+                            </div>
+                            <hr>
+                            <p>Price Range: $3,400,000 - $3,500,000</p>
+                            <p>Reviews: ★★★★★</p>
+                        </div>
+                    </div>
+                    <div class="listing-card">
+                        <img src="images/farmhouse.jpg" alt="Farmhouse">
+                        <div class="listing-details">
+                            <h3><a href="#">Charming Farmhouse</a></h3>
+                            <p>Location: Napa Valley, CA</p>
+                            <hr>
+                            <div class="details-info">
+                                <span>3,800 sqft</span>
+                                <span>5 Bed</span>
+                                <span>4 Bath</span>
+                            </div>
+                            <hr>
+                            <p>Price Range: $900,000 - $950,000</p>
+                            <p>Reviews: ★★★★★</p>
+                        </div>
+                    </div>
+                    <div class="listing-card">
+                        <img src="images/loft.jpg" alt="Loft">
+                        <div class="listing-details">
+                            <h3><a href="#">Stylish Loft</a></h3>
+                            <p>Location: San Francisco, CA</p>
+                            <hr>
+                            <div class="details-info">
+                                <span>1,800 sqft</span>
+                                <span>2 Bed</span>
+                                <span>2 Bath</span>
+                            </div>
+                            <hr>
+                            <p>Price Range: $230,000 - $250,000</p>
+                            <p>Reviews: ★★★★★</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          You've been signed out.
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+               
+
+                
+                            
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2024 Estate Listing. All rights reserved.</p>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
+</html>
+
+
+
+
+

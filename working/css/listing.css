@@ -1,0 +1,299 @@
+/* css for listing */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Trebuchet MS, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 66.67vh;
+    background: linear-gradient(to bottom, rgba(22, 28, 45, 0.5) 0%, rgba(22, 28, 45, 0.6) 25%, rgba(22, 28, 45, 0.7) 50%, rgba(22, 28, 45, 0.8) 100%), url("../images/hero-bg.jpg") no-repeat center center/cover;
+    color: #fff;
+}
+
+.listing-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-hero {
+    background: #0d6efd;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.btn-hero:hover {
+    background: #0a58ca;
+}
+
+/* MAIN */
+
+main {
+    padding: 2rem 1rem;
+}
+
+/* CSS for Search and Sort Sections */
+
+.search-section,
+.sorting-section {
+    background: #f8f8f8;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 5px lightgrey;
+}
+
+.search-section h2,
+.sorting-section h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.search-section form,
+.sorting-section form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.search-section form input[type="search"],
+.search-section form input[type="number"],
+.search-section form select,
+.sorting-section form select {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 150px;
+    max-width: 250px;
+}
+
+.search-section form button,
+.sorting-section form button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #0d6efd;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-section form button:hover,
+.sorting-section form button:hover {
+    background: #0a58ca;
+}
+
+
+.listings-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.listings-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+}
+
+.listing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.listing-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.listing-card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease; /* Add transition for smooth zoom effect */
+}
+
+.listing-card:hover img {
+    transform: scale(1.05); /* Zoom in effect */
+}
+
+.listing-details {
+    padding: 1rem;
+}
+
+.listing-details h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.listing-details h3 a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.listing-details h3 a:hover {
+    color: #0d6efd;
+}
+
+.listing-details p {
+    margin-bottom: 0.5rem;
+}
+
+.listing-details hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 0.5rem 0;
+}
+
+.listing-details .details-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* ================== NAVIGATION ======================*/
+.navbar {background-color: #e3f2fd;}
+
+.blue:hover {
+    background-color: #346fc8;
+}
+.u-logo {
+    width: 2em;
+    margin-right: 0.7em;
+    margin-left: 0.5em;
+}
+.web-logo {
+    width: 3.4em;
+}
+
+.dropdown-toggle::after {
+    display: none;
+  }
+
+.nav-link {
+border-radius: 0.5em;
+}
+.nav-link:hover {
+    background-color: rgb(130, 177, 235);
+   
+    transition: 0.3s;
+}
+#user-logo{    border-radius: 1em;}
+#user-logo:hover {
+    background-color: #0d6efd;
+   transition: 0.3s;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    z-index: 1000; 
+   
+}
+
+nav.sticky {
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.flex-nav-bar {
+    display: flex;
+}
+
+.flex-nav-bar span {
+align-self: center;
+max-width:100vh;
+}
+.nav-container {
+    background-color: white;
+}
+.nav-container ul {
+    display:  flex;
+}
+.nav-container ul li {
+    margin: 2em 0;
+}
+.nav-container ul li a {
+    text-decoration: none;
+    margin: 0em 3em;
+    font-size: 1.5em;
+} 
+
+#website-logo {
+    width: 8%;
+    float: right;
+} */

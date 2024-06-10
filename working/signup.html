@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to TerraTech</title>
+
+    <link rel="stylesheet" href="css/signup.css" class="css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="16x16" href="#ICON">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- create login page for TerraTech -->
+    <div class="container">
+        <div class="sign-up">
+            <div class="logo">
+                <img src="image/TerraTech-transparent.png" alt="">
+            </div>
+            <form method="post" action="signupAcc.html" id="form">
+                <div class="sign-up-box">
+                    <div class="text-box">
+                        <input type="text" name="Email" required id="email">
+                        <span></span>
+                        <label>Email</label>
+                    </div>
+                    <div class="text-box">
+                        <input type="password" name="Password" required id="password">
+                        <span></span>
+                        <label>Password</label>
+                    </div>
+                    <div class="text-box">
+                        <input type="password" name="Password" required id="retypepassword">
+                        <span></span>
+                        <label>Retype Password</label>
+                    </div>
+                    <!-- <p class="pass">Forgot Password?</p> -->
+                </div>
+                <div class="button-row">
+                    <input type="submit" name="signup" id="signup" value="Sign up">
+                    <button class="login" type="button" id="login"><a href="login.html">Log in to TerraTech</a></button>
+                    <!-- <p class="member">Not a member?
+                        <a href="#">Signup here</a>
+                    </p> -->
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
